@@ -4,6 +4,7 @@ const app = new Vue (
     {
         el: '#root',
         data: {
+            timer: null,
             contatoreFoto: 0,
             boxFoto: [
                 'img/image1.jpg',
@@ -12,7 +13,14 @@ const app = new Vue (
                 'img/image4.jpg',
             ]
         },
+        mounted: function() {
+            this.startSlide();
+        },
         methods: {
+            startSlide: function() {
+                this.timer = setInterval(this.succFoto, 3000);
+            },
+            
             precFoto() {
                 this.contatoreFoto -= 1;
                 if (this.contatoreFoto < 0) this.contatoreFoto = (this.boxFoto.length -1);
@@ -21,6 +29,8 @@ const app = new Vue (
                 this.contatoreFoto += 1;
                 if (this.contatoreFoto == (this.boxFoto.length)) this.contatoreFoto = 0;
             }
+            
         }
     }
 )
+
