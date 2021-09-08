@@ -12,6 +12,19 @@
     <title>Vue Slider</title>
 </head>
 <body>
+    <div id="root" class="container">
+        <div class="wrapper">
+            <div class="precedente" @click="precFoto">
+                <i class="fas fa-angle-left"></i>
+            </div>
+            <div class="immagini">
+                <img :src="boxFoto[contatoreFoto]" alt="">
+            </div>
+            <div class="successiva" @click="succFoto">
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
     
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
