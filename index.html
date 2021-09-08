@@ -23,6 +23,9 @@
             <div class="successiva" @click="succFoto">
                 <i class="fas fa-angle-right"></i>
             </div>
+            <div class="nav">
+                <i :class="(index == contatoreFoto) ? 'active' : null" class="fas fa-circle" v-for="(foto, index) in boxFoto"></i>
+            </div>
         </div>
     </div>
     
